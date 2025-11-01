@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukesh Singla - HR Analytics Specialist | Dubai Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #1f4788;
+            --secondary-color: #2c5aa0;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f5f7fa;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #1f4788 0%, #2c5aa0 100%);
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-dark); }
+        nav { background: var(--gradient); padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        nav .logo { color: var(--white); font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        nav a { color: var(--white); text-decoration: none; transition: opacity 0.3s; font-size: 0.9rem; }
+        nav a:hover { opacity: 0.8; }
+        .hero { background: var(--gradient); color: var(--white); padding: 120px 2rem 60px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero .tagline { font-size: 1.5rem; margin-bottom: 0.5rem; opacity: 0.9; }
+        .hero .subtitle { font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.8; }
+        .btn { padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; margin: 0.5rem; }
+        .btn-primary { background: var(--white); color: var(--primary-color); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); }
+        .btn-secondary:hover { background: var(--white); color: var(--primary-color); }
+        section { padding: 60px 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 2.5rem; color: var(--primary-color); position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 4px; background: var(--gradient); border-radius: 2px; }
+        .bg-light { background: var(--bg-light); }
+        .stats { background: var(--gradient); color: var(--white); padding: 40px 2rem; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .stat-item { padding: 1.5rem; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1rem; opacity: 0.9; }
+        .summary-box { background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%); padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 3rem; }
+        .summary-box p { color: var(--text-dark); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .highlight-achievement { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 1.5rem; border-radius: 10px; border-left: 5px solid #4caf50; margin: 1.5rem 0; }
+        .highlight-achievement strong { color: #2e7d32; }
+        .core-strengths { margin-top: 2rem; }
+        .core-strengths h3 { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .strength-item { background: var(--white); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .strength-item strong { color: var(--primary-color); display: block; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .strength-item p { color: var(--text-light); }
+        .achievement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .achievement-card { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 4px solid var(--primary-color); transition: transform 0.3s; }
+        .achievement-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .achievement-card h3 { color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .achievement-card p { color: var(--text-light); line-height: 1.8; }
+        .competency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmin(300px, 1fr)); gap: 2rem; }
+        .competency-card { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .competency-card h3 { color: var(--primary-color); margin-bottom: 1rem; }
+        .competency-card ul { list-style: none; }
+        .competency-card li { padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: flex-start; gap: 0.5rem; }
+        .competency-card li::before { content: '✓'; color: var(--primary-color); font-weight: bold; }
+        .project-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 2rem; transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        .project-header { background: var(--gradient); color: var(--white); padding: 2rem; }
+        .project-header h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .project-body { padding: 2rem; }
+        .project-body ul { list-style: none; margin-bottom: 1.5rem; }
+        .project-body li { padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .project-body li::before { content: '▸'; color: var(--primary-color); font-weight: bold; }
+        .project-link { padding: 10px 20px; background: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 5px; display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 1rem; margin-top: 0.5rem; transition: background 0.3s; }
+        .project-link:hover { background: var(--secondary-color); }
+        .timeline { position: relative; padding-left: 3rem; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gradient); }
+        .timeline-item { position: relative; padding-bottom: 2.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -3.5rem; top: 0; width: 15px; height: 15px; border-radius: 50%; background: var(--primary-color); border: 3px solid var(--white); box-shadow: 0 0 0 3px var(--primary-color); }
+        .timeline-content { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .timeline-content h3 { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .timeline-content .date { color: var(--text-light); font-style: italic; margin-bottom: 1rem; font-size: 0.95rem; }
+        .timeline-content ul { list-style: none; margin-top: 1rem; }
+        .timeline-content li { padding: 0.3rem 0; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; }
+        .timeline-content li::before { content: '•'; color: var(--primary-color); font-weight: bold; }
+        .cert-section { margin-bottom: 2.5rem; }
+        .cert-section h3 { color: var(--primary-color); font-size: 1.3rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .cert-item { background: var(--white); padding: 1.5rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 1rem; transition: transform 0.3s; }
+        .cert-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .cert-icon { font-size: 1.8rem; color: var(--primary-color); min-width: 35px; }
+        .cert-info h4 { color: var(--primary-color); font-size: 0.95rem; margin-bottom: 0.3rem; }
+        .cert-info p { color: var(--text-light); font-size: 0.85rem; }
+        .education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+        .education-card { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .education-card h3 { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .education-card .year { color: var(--text-light); font-style: italic; margin-bottom: 0.5rem; }
+        .education-card .institution { color: var(--text-dark); font-weight: 500; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .contact-item { background: var(--white); padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .contact-item:hover { transform: translateY(-5px); }
+        .contact-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .contact-item h3 { color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .contact-item a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+        .contact-item a:hover { color: var(--primary-color); }
+        footer { background: var(--text-dark); color: var(--white); text-align: center; padding: 2rem; }
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; }
+        .social-links a { color: var(--white); font-size: 1.5rem; transition: color 0.3s; }
+        .social-links a:hover { color: var(--secondary-color); }
+        .dubai-section { background: var(--gradient); color: var(--white); padding: 60px 2rem; text-align: center; }
+        .dubai-content { max-width: 900px; margin: 0 auto; }
+        .dubai-content h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+        .dubai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-top: 2rem; }
+        .dubai-item { background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; backdrop-filter: blur(10px); }
+        .dubai-item h3 { font-size: 1.2rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .timeline { padding-left: 2rem; }
+            .achievement-grid, .competency-grid, .education-grid { grid-template-columns: 1fr; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Sukesh Singla</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>SUKESH SINGLA</h1>
+        <p class="tagline">HR Analytics Specialist | Workforce Planning Analyst</p>
+        <p class="subtitle">Business Intelligence Professional</p>
+        <p style="margin-bottom: 1.5rem;">📍 Currently: Faridabad, India | 🎯 Target: Dubai, UAE</p>
+        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">✅ Immediate Availability | 🛂 Valid Passport: P4846924 | Open to Visa Sponsorship</p>
+        <div>
+            <a href="#summary" class="btn btn-primary"><i class="fas fa-user"></i> About Me</a>
+            <a href="#projects" class="btn btn-secondary"><i class="fas fa-rocket"></i> View Projects</a>
+            <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="Sukesh_Singla_Resume.pdf" class="btn btn-secondary" download><i class="fas fa-download"></i> Resume</a>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-number">13+</div><div class="stat-label">Years Experience</div></div>
+            <div class="stat-item"><div class="stat-number">$450K+</div><div class="stat-label">Annual Savings Projected</div></div>
+            <div class="stat-item"><div class="stat-number">3000+</div><div class="stat-label">Employees Analyzed</div></div>
+            <div class="stat-item"><div class="stat-number">87%</div><div class="stat-label">ML Accuracy</div></div>
+            <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Certifications</div></div>
+        </div>
+    </div>
+
+    <section id="summary">
+        <div class="container">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary-box">
+                <p>
+                    <strong>HR Analytics and Workforce Planning professional</strong> with <strong>13+ years</strong> of combined experience 
+                    in data analytics, financial reporting, and operations management. Proven expertise in workforce optimization, 
+                    payroll analytics, budgeting, and data-driven decision-making.
+                </p>
+                
+                <div class="highlight-achievement">
+                    <p><strong>🎯 Recent Achievement:</strong> Developed comprehensive HR Analytics Dashboard analyzing 3,000+ employee records, 
+                    projecting <strong>$450K+ annual savings</strong> through workforce interventions and retention strategies. Built Dubai Real Estate 
+                    Market Dashboard analyzing 50,000+ property transactions, demonstrating deep understanding of Dubai's real estate landscape.</p>
+                </div>
+
+                <div class="core-strengths">
+                    <h3><i class="fas fa-star"></i> Core Strengths</h3>
+                    
+                    <div class="strength-item">
+                        <strong>📊 Workforce Analytics:</strong>
+                        <p>Manpower planning, attrition prediction (87% ML accuracy), retention strategies, employee segmentation</p>
+                    </div>
+
+                    <div class="strength-item">
+                        <strong>💰 Financial Analysis:</strong>
+                        <p>7+ years managing budgeting, payroll reporting, cost optimization, and variance analysis</p>
+                    </div>
+
+                    <div class="strength-item">
+                        <strong>📈 Business Intelligence:</strong>
+                        <p>Power BI expert with 130+ custom DAX measures, KPI development, executive dashboards</p>
+                    </div>
+
+                    <div class="strength-item">
+                        <strong>⚙️ Operations Management:</strong>
+                        <p>Currently managing 500+ individuals with real-time performance tracking and resource allocation</p>
+                    </div>
+
+                    <div class="strength-item">
+                        <strong>💻 Technical Proficiency:</strong>
+                        <p>Power BI (Advanced), Python, SQL, Machine Learning, Excel (VBA, Financial Modelling), DAX, Statistical Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Key Achievements</h2>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h3><i class="fas fa-dollar-sign"></i> Workforce Cost Optimization</h3>
+                    <p>Projected <strong>$450K annual savings</strong> through data-driven HR interventions, identifying 429 high-risk employees and developing targeted retention strategies based on predictive analytics.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3><i class="fas fa-chart-line"></i> HR Analytics & Insights</h3>
+                    <p>Engineered enterprise-grade HR dashboard analyzing <strong>3,000+ employee records</strong> with 60+ custom metrics covering attrition, satisfaction, demographics, compensation, and departmental trends.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3><i class="fas fa-users"></i> Workforce Segmentation</h3>
+                    <p>Implemented K-Means clustering segmenting workforce into <strong>4 behavioral groups</strong>, enabling targeted manpower strategies and resource optimization.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3><i class="fas fa-calculator"></i> Financial Reporting</h3>
+                    <p><strong>7+ years</strong> managing financial reporting, monthly reconciliations, budget forecasts, and cost analysis as Accounts Executive (2011-2018).</p>
+                </div>
+                <div class="achievement-card">
+                    <h3><i class="fas fa-trophy"></i> Operational Excellence</h3>
+                    <p>Reduced operational incidents by <strong>25%</strong> and improved satisfaction by <strong>30%</strong> through data-driven resource allocation for 500+ individuals.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3><i class="fas fa-building"></i> Dubai Market Expertise</h3>
+                    <p>Built comprehensive dashboard analyzing <strong>50,000+ Dubai property transactions</strong>, demonstrating understanding of local market dynamics and investment trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="competency-grid">
+                <div class="competency-card">
+                    <h3><i class="fas fa-users-cog"></i> Workforce Planning & Analytics</h3>
+                    <ul>
+                        <li>Manpower budgeting and forecasting</li>
+                        <li>Headcount optimization and workload analysis</li>
+                        <li>Workforce trend analysis and reporting</li>
+                        <li>Attrition prediction and retention planning</li>
+                        <li>Employee segmentation and behavioral analysis</li>
+                    </ul>
+                </div>
+                <div class="competency-card">
+                    <h3><i class="fas fa-money-bill-wave"></i> Financial & Payroll Analytics</h3>
+                    <ul>
+                        <li>Budget preparation and variance analysis</li>
+                        <li>Cost optimization and ROI analysis</li>
+                        <li>Monthly financial reporting and reconciliation</li>
+                        <li>Payroll expense tracking and forecasting</li>
+                        <li>Department-wise cost breakdowns</li>
+                    </ul>
+                </div>
+                <div class="competency-card">
+                    <h3><i class="fas fa-chart-bar"></i> Business Intelligence & Reporting</h3>
+                    <ul>
+                        <li>Power BI dashboard development</li>
+                        <li>KPI design and performance tracking</li>
+                        <li>Executive presentation and data storytelling</li>
+                        <li>Predictive analytics and ML modeling</li>
+                        <li>Real-time reporting systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 4rem;">Technical Skills</h2>
+            <div class="competency-grid">
+                <div class="competency-card">
+                    <h3><i class="fas fa-chart-line"></i> Business Intelligence</h3>
+                    <ul>
+                        <li>Power BI (Advanced)</li>
+                        <li>Tableau</li>
+                        <li>Advanced Excel (VBA, Macros, Financial Modelling)</li>
+                        <li>DAX & Power Query</li>
+                        <li>SQL</li>
+                        <li>Data Visualization | KPI Development</li>
+                    </ul>
+                </div>
+                <div class="competency-card">
+                    <h3><i class="fas fa-robot"></i> Data Science & ML</h3>
+                    <ul>
+                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                        <li>Machine Learning (K-Means, Random Forest)</li>
+                        <li>Predictive Analytics</li>
+                        <li>Statistical Modeling</li>
+                        <li>Data Mining</li>
+                    </ul>
+                </div>
+                <div class="competency-card">
+                    <h3><i class="fas fa-briefcase"></i> Workforce Analytics</h3>
+                    <ul>
+                        <li>Workforce Planning</li>
+                        <li>Manpower Budgeting</li>
+                        <li>Payroll Analytics</li>
+                        <li>Attrition Prediction</li>
+                        <li>Cost Optimization</li>
+                        <li>Performance Metrics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>🏠 Dubai Real Estate Price Predictor</h3>
+                    <p style="opacity: 0.9;">Python | Streamlit | Pandas | NumPy | Machine Learning | Git/GitHub | Streamlit Cloud</p>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>Developed full-stack web application with 4-page navigation and multi-feature analytics</li>
+                        <li>Built property comparison tool enabling side-by-side analysis of 2-3 properties</li>
+                        <li>Created market insights dashboard with location, type, and size impact analysis</li>
+                        <li>Implemented investment calculator with ROI, rental yield, and timeline projections</li>
+                        <li>Overcame multiple deployment challenges including dependency conflicts and file optimization</li>
+                        <li>Result: Production-ready application with 15+ features, professional UI/UX, dark mode toggle</li>
+                    </ul>
+                    <a href="https://dubai-property-predictor.streamlit.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="https://github.com/Sukesh1985/dubai-property-predictor" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>📊 HR Analytics Dashboard with Machine Learning</h3>
+                    <p style="opacity: 0.9;">Power BI | Python | Machine Learning | DAX | Workforce Analytics | October 2025</p>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>Developed comprehensive HR analytics framework analyzing 3,000+ employee records</li>
+                        <li>Achieved 87% attrition prediction accuracy using Random Forest ML algorithm</li>
+                        <li>Created 60+ custom DAX measures across 6 interactive dashboards</li>
+                        <li>Covered workforce demographics, attrition trends, compensation analysis, department-wise performance</li>
+                        <li>Implemented K-Means clustering for workforce segmentation into 4 behavioral groups</li>
+                        <li>Delivered actionable insights projecting $450K annual cost savings through proactive retention programs</li>
+                    </ul>
+                    <a href="https://github.com/Sukesh1985/HR-Analytics-Dashboard-ML" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>🏙️ Dubai Real Estate Market Analysis Dashboard</h3>
+                    <p style="opacity: 0.9;">Power BI | Market Analytics | Financial Analysis | DAX | September 2025</p>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>Analyzed 50,000+ Dubai property transactions demonstrating deep understanding of local market dynamics</li>
+                        <li>Designed 5 interactive dashboards with 40+ custom financial metrics</li>
+                        <li>Created price per sq. ft analysis, YoY growth trends, ROI calculations, location-based segmentation</li>
+                        <li>Delivered strategic insights on market trends and premium investment zones</li>
+                        <li>Showcased expertise relevant to Dubai Holding's real estate portfolio</li>
+                    </ul>
+                    <a href="https://github.com/Sukesh1985/Dubai-real-estate-Power-BI" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Operations / Accommodation Coordinator</h3>
+                        <p class="date">K.R Mangalam University, Gurgaon | November 2022 – Present</p>
+                        <strong style="color: var(--primary-color);">Workforce & Resource Management:</strong>
+                        <ul>
+                            <li>Manage daily operations and resource allocation for 500+ residential students</li>
+                            <li>Accommodation planning, facility management, and safety protocols</li>
+                            <li>Maintain real-time workforce performance databases with KPI dashboards</li>
+                            <li>Compile daily/weekly/monthly operational reports</li>
+                            <li>Conduct root cause analysis and data-driven resource optimization</li>
+                            <li>Reduced operational incidents by 25% and improved satisfaction by 30%</li>
+                        </ul>
+                        <strong style="color: var(--primary-color);">Analytics & Reporting:</strong>
+                        <ul>
+                            <li>Developed Hostel Management System (Python, MySQL) managing 500+ records</li>
+                            <li>Automated allocation and attendance tracking</li>
+                            <li>Reduced administrative processing time by 40% through automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Student Affairs & Hostel Supervisor</h3>
+                        <p class="date">Rai Technology University, Bangalore | March 2018 – October 2022</p>
+                        <ul>
+                            <li>Supervised 400+ resident students with comprehensive performance tracking systems</li>
+                            <li>Maintained detailed operational logs tracking incidents, maintenance requests, compliance metrics</li>
+                            <li>Tracked performance KPIs in real-time</li>
+                            <li>Achieved 95% complaint resolution satisfaction through systematic problem-solving</li>
+                            <li>Implemented process improvements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Accounts Executive</h3>
+                        <p class="date">Bankey Bihari Industries, Faridabad | May 2011 – February 2018</p>
+                        <strong style="color: var(--primary-color);">Financial Management & Reporting:</strong>
+                        <ul>
+                            <li>Managed comprehensive financial operations including AR/AP, vendor reconciliation, financial record-keeping</li>
+                            <li>Prepared monthly financial reports, budget forecasts, variance analysis using Advanced Excel</li>
+                            <li>Analyzed dispatch data and planned production schedules</li>
+                            <li>Optimized workflow efficiency by 20% through data-driven resource allocation</li>
+                            <li>Collaborated with department heads to align budget forecasts with business objectives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>🎓 Master of Computer Applications (MCA)</h3>
+                    <p class="year">2007 – 2010</p>
+                    <p class="institution">Mangalam School of Management & Technology</p>
+                </div>
+                <div class="education-card">
+                    <h3>🎓 Bachelor of Arts</h3>
+                    <p class="year">2003 – 2006</p>
+                    <p class="institution">University of Delhi, School of Open Learning</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--white); border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-language"></i> Languages</h4>
+                <p style="color: var(--text-light);"><strong>English:</strong> Fluent | <strong>Hindi:</strong> Native</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Professional Certifications</h2>
+            
+            <div class="cert-section">
+                <h3><i class="fas fa-chart-bar"></i> Data Science & Analytics (8)</h3>
+                <div class="cert-grid">
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Master Certificate Data Science Bootcamp</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Master Certificate Data Analysis</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Data Science with Python</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Data Science with R</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Business Analytics with Excel</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>SQL for Data Science</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Statistics Essential for Data Science</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Career Essentials in Data Analysis</h4><p>Microsoft & LinkedIn</p></div></div>
+                </div>
+            </div>
+
+            <div class="cert-section">
+                <h3><i class="fas fa-brain"></i> Machine Learning & AI (4)</h3>
+                <div class="cert-grid">
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Machine Learning Advanced Certification</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Deep Learning Certification</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Generative AI for Data, Tech & Finance</h4><p>Hero Vired</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-star"></i></div><div class="cert-info"><h4>One Million Prompters Initiative</h4><p>Dubai Future Foundation</p></div></div>
+                </div>
+            </div>
+
+            <div class="cert-section">
+                <h3><i class="fas fa-chart-line"></i> Business Intelligence & Visualization (5)</h3>
+                <div class="cert-grid">
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Power BI Certification</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Power BI Certificate</h4><p>Tech Tips</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Power BI Completion</h4><p>PwC Switzerland (Forage)</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Tableau Desktop Certification</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Data Visualization with Python</h4><p>IBM (Simplilearn)</p></div></div>
+                </div>
+            </div>
+
+            <div class="cert-section">
+                <h3><i class="fas fa-code"></i> Programming & Development (4)</h3>
+                <div class="cert-grid">
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Programming Basics & Data Analytics with Python</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>DevOps Certification</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Kubernetes Certification</h4><p>Simplilearn</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>RPA Certification</h4><p>Simplilearn</p></div></div>
+                </div>
+            </div>
+
+            <div class="cert-section">
+                <h3><i class="fas fa-building"></i> Industry Simulations & Projects (4)</h3>
+                <div class="cert-grid">
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>British Airways Data Science Simulation</h4><p>Forage Virtual Program</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Deloitte Data Analytics Job Simulation</h4><p>Forage Virtual Program</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Goldman Sachs Excel Skills</h4><p>Forage Virtual Program</p></div></div>
+                    <div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>Data Analyst Capstone</h4><p>Simplilearn</p></div></div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, #1f4788 0%, #2c5aa0 100%); border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <h3 style="margin-bottom: 1rem; font-size: 2rem;"><i class="fas fa-trophy"></i> 25+ Professional Certifications</h3>
+                <p style="font-size: 1.2rem; opacity: 0.95;">Continuously upgrading skills in Data Science, Machine Learning, Business Intelligence & Development</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="dubai-section">
+        <div class="dubai-content">
+            <h2>🇦🇪 Why Dubai Holding Real Estate?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Ready to contribute to Dubai's world-class real estate organization</p>
+            <div class="dubai-grid">
+                <div class="dubai-item">
+                    <h3><i class="fas fa-chart-line"></i> Proven HR Analytics Expertise</h3>
+                    <p>Recent comprehensive project demonstrating workforce planning and cost optimization capabilities</p>
+                </div>
+                <div class="dubai-item">
+                    <h3><i class="fas fa-building"></i> Dubai Market Knowledge</h3>
+                    <p>Built detailed Dubai real estate market dashboard showing understanding of local dynamics</p>
+                </div>
+                <div class="dubai-item">
+                    <h3><i class="fas fa-calculator"></i> Financial Background</h3>
+                    <p>7+ years managing budgets, financial reporting, and cost analysis</p>
+                </div>
+                <div class="dubai-item">
+                    <h3><i class="fas fa-calendar-check"></i> Immediate Availability</h3>
+                    <p>Ready to relocate to Dubai immediately with valid passport (P4846924)</p>
+                </div>
+                <div class="dubai-item">
+                    <h3><i class="fas fa-handshake"></i> Cultural Alignment</h3>
+                    <p>Seeking long-term opportunity to contribute to world-class real estate organization</p>
+                </div>
+                <div class="dubai-item">
+                    <h3><i class="fas fa-star"></i> Dubai Foundation Certified</h3>
+                    <p>One Million Prompters Initiative - Dubai Future Foundation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">
+                <strong>Target Roles:</strong> HR Analytics Specialist | Workforce Planning Analyst | Business Intelligence Analyst
+            </p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <a href="mailto:ssingla25@gmail.com">ssingla25@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <h3>Phone</h3>
+                    <a href="tel:+918439372355">+91-8439372355</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/sukesh-singla-667701a5" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/sukesh1985" target="_blank">View my work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/sukesh-singla-667701a5" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/sukesh1985" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:ssingla25@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 Sukesh Singla. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">HR Analytics Specialist | Targeting Dubai, UAE | Immediate Availability</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.9rem;">Valid Passport: P4846924 | Open to Visa Sponsorship</p>
+    </footer>
+</body>
+</html>
