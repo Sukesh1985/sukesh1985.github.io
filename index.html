@@ -19,7 +19,9 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-dark); }
         nav { background: var(--gradient); padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        nav .logo { color: var(--white); font-size: 1.5rem; font-weight: bold; }
+        nav .logo { color: var(--white); font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 0.8rem; }
+        nav .logo-icon { background: var(--white); color: var(--primary-color); width: 42px; height: 42px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; box-shadow: 0 3px 10px rgba(0,0,0,0.3); transition: transform 0.3s; }
+        nav .logo-icon:hover { transform: scale(1.05); }
         nav ul { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; }
         nav a { color: var(--white); text-decoration: none; transition: opacity 0.3s; font-size: 0.9rem; }
         nav a:hover { opacity: 0.8; }
@@ -125,7 +127,10 @@
 <body>
     <nav>
         <div class="container">
-            <div class="logo">Sukesh Singla</div>
+            <div class="logo">
+                <div class="logo-icon">SS</div>
+                <span>Sukesh Singla</span>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#summary">Summary</a></li>
@@ -149,16 +154,20 @@
             <a href="#summary" class="btn btn-primary"><i class="fas fa-user"></i> About Me</a>
             <a href="#projects" class="btn btn-secondary"><i class="fas fa-rocket"></i> View Projects</a>
             <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact</a>
+            <!-- RESUME DOWNLOAD BUTTON -->
+            <!-- Option 1: Local file - Save your resume as "Sukesh_Singla_Resume.pdf" in the same folder as this HTML file -->
             <a href="Sukesh_Singla_Resume.pdf" class="btn btn-secondary" download><i class="fas fa-download"></i> Resume</a>
+            <!-- Option 2: If using Google Drive/Dropbox, uncomment below and add your link, then comment out Option 1 above -->
+            <!-- <a href="YOUR_GOOGLE_DRIVE_LINK" class="btn btn-secondary" target="_blank"><i class="fas fa-download"></i> Resume</a> -->
         </div>
     </section>
 
     <div class="stats">
         <div class="stats-grid">
             <div class="stat-item"><div class="stat-number">13+</div><div class="stat-label">Years Experience</div></div>
-            <div class="stat-item"><div class="stat-number">$450K+</div><div class="stat-label">Annual Savings Projected</div></div>
-            <div class="stat-item"><div class="stat-number">3000+</div><div class="stat-label">Employees Analyzed</div></div>
-            <div class="stat-item"><div class="stat-number">87%</div><div class="stat-label">ML Accuracy</div></div>
+            <div class="stat-item"><div class="stat-number">AED 3M+</div><div class="stat-label">Potential Annual Savings</div></div>
+            <div class="stat-item"><div class="stat-number">50,000+</div><div class="stat-label">UAE Employees Analyzed</div></div>
+            <div class="stat-item"><div class="stat-number">95%</div><div class="stat-label">WPS Compliance</div></div>
             <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Certifications</div></div>
         </div>
     </div>
@@ -321,6 +330,76 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             
+            <!-- FLAGSHIP PROJECT: UAE Workforce Analytics Dashboard -->
+            <div class="project-card" style="border: 3px solid #1f4788; box-shadow: 0 10px 40px rgba(31, 71, 136, 0.3);">
+                <div class="project-header" style="background: linear-gradient(135deg, #1f4788 0%, #2c5aa0 100%); position: relative;">
+                    <div style="position: absolute; top: 10px; right: 20px; background: #4caf50; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold;">
+                        ⭐ FEATURED PROJECT
+                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">🇦🇪 UAE Workforce Analytics Dashboard</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.95;">Power BI | DAX | Data Modeling | HR Analytics | Compliance Tracking | November 2025</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; font-size: 0.9rem;">50,000+ Records</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; font-size: 0.9rem;">10 Industries</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; font-size: 0.9rem;">6 Interactive Pages</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; font-size: 0.9rem;">2020-2025 Data</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p style="font-size: 1.15rem; margin-bottom: 1.5rem;"><strong>🎯 Project Overview:</strong> Enterprise-level Power BI dashboard analyzing 50,000+ employee records across 10 major UAE industries, providing strategic insights into Emiratization compliance, workforce planning, and salary intelligence specifically designed for the Dubai market.</p>
+                    
+                    <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 5px solid #4caf50;">
+                        <strong style="color: #2e7d32; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">💰 Business Impact & Value</strong>
+                        <ul style="list-style: none; color: #2e7d32;">
+                            <li>✓ <strong>AED 2-3M</strong> potential annual savings through workforce optimization</li>
+                            <li>✓ <strong>15.1% Emiratization rate</strong> - exceeding 5% government target by 200%+</li>
+                            <li>✓ <strong>95% WPS compliance</strong> - above 90% regulatory threshold</li>
+                            <li>✓ <strong>15-20% reduction</strong> in time-to-hire through pattern analysis</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="color: #1f4788; margin-top: 1.5rem; margin-bottom: 1rem; font-size: 1.2rem;"><i class="fas fa-star"></i> Key Features & Achievements</h4>
+                    <ul>
+                        <li><strong>Emiratization Tracking:</strong> Real-time monitoring of UAE national employment (15.1% vs 5% target) with gap analysis</li>
+                        <li><strong>WPS Compliance Dashboard:</strong> 95% compliance rate tracking across industries with detailed scorecards</li>
+                        <li><strong>Workforce Demographics:</strong> Analysis across 10+ nationalities, 7 emirates, age groups, education, skills</li>
+                        <li><strong>Salary Intelligence:</strong> Percentile analysis (P25: AED 4,057 | P50: AED 7,685 | P75: AED 15,212)</li>
+                        <li><strong>Hiring Trends:</strong> 116,684 hires analyzed with time-to-fill metrics (48-56 days) and seasonal patterns</li>
+                        <li><strong>Industry Analysis:</strong> Cross-sector comparison of Construction, Healthcare, Finance, Tourism, etc.</li>
+                    </ul>
+
+                    <h4 style="color: #1f4788; margin-top: 1.5rem; margin-bottom: 1rem; font-size: 1.2rem;"><i class="fas fa-code"></i> Technical Implementation</h4>
+                    <ul>
+                        <li>Star schema data model with optimized fact and dimension tables</li>
+                        <li>50+ advanced DAX measures: Emiratization %, WPS compliance, YoY growth, time intelligence</li>
+                        <li>Performance optimized: Page load < 3 seconds with 50K+ records</li>
+                        <li>Interactive features: Year, Emirate, Industry filters with drill-through capabilities</li>
+                        <li>Professional 6-page dashboard with consistent branding and intuitive navigation</li>
+                        <li>Complete documentation: Project overview, technical docs, data dictionary, setup guides</li>
+                    </ul>
+
+                    <div style="background: #f5f7fa; padding: 1.5rem; border-radius: 10px; margin-top: 1.5rem; border-left: 4px solid #1f4788;">
+                        <strong style="color: #1f4788; font-size: 1.1rem; display: block; margin-bottom: 0.8rem;"><i class="fas fa-trophy"></i> Why This Project Stands Out</strong>
+                        <ul style="list-style: none; color: #666;">
+                            <li>✓ Addresses real UAE business challenges (Emiratization, WPS compliance)</li>
+                            <li>✓ Demonstrates deep understanding of Dubai labor market regulations</li>
+                            <li>✓ Enterprise-scale data handling (50,000+ records across 6 years)</li>
+                            <li>✓ Professional documentation rivaling enterprise-level projects</li>
+                            <li>✓ Quantified business impact (AED 2-3M potential savings)</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #e0e0e0;">
+                        <a href="https://github.com/sukesh1985/uae-workforce-analytics-dashboard" class="project-link" target="_blank" style="font-size: 1.1rem; padding: 12px 25px;">
+                            <i class="fab fa-github"></i> View Complete Project on GitHub
+                        </a>
+                        <a href="https://github.com/sukesh1985/uae-workforce-analytics-dashboard#readme" class="project-link" target="_blank" style="background: #4caf50; font-size: 1.1rem; padding: 12px 25px;">
+                            <i class="fas fa-book"></i> Read Full Documentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-card">
                 <div class="project-header">
                     <h3>🏠 Dubai Real Estate Price Predictor</h3>
